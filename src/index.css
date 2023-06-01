@@ -1,0 +1,217 @@
+/* GLOBAL STYLES */
+*,
+*::after,
+*::before {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "SF Pro Display", sans-serif;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.header__banner {
+  width: 100%;
+  height: 30vh;
+  border-radius: 6px;
+  background-image: url("./images/header__banner.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 18px;
+}
+
+.battle__container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  border: 1px solid black;
+  font-size: 30px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.cell {
+  background-image: url("./images/sea.gif");
+  background-size: cover;
+  background-position: center;
+}
+
+.cell.active::after {
+  content: "⛵️";
+}
+
+.cell.killed::after {
+  content: none;
+}
+.cell.killed {
+  background-image: url("../src/images/killed.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.cell.missed::after {
+  content: "🚫";
+}
+
+.btn__container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px 15px;
+  line-height: 1.5;
+  border: none;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.btn__success:hover {
+  color: #2790f4;
+  text-decoration: underline;
+}
+
+.btn__move {
+  color: #2790f4;
+  border: 2px solid #2790f4;
+  border-radius: 6px;
+}
+
+.btn__move:hover {
+  background-color: #2790f4;
+  border: 2px solid #2790f4;
+  color: #fff;
+}
+
+.btn__confirm:hover {
+  color: #2790f4;
+  text-decoration: underline;
+  border: 2px solid #2790f4;
+  background-color: #fff;
+}
+
+.btn__confirm {
+  background-color: #2790f4;
+  border: 2px solid #2790f4;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.btn__danger:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+.btn__success {
+  color: #2790f4;
+}
+
+.btn__danger {
+  color: #fff;
+  color: red;
+}
+
+.btn-warning {
+  color: #212529;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.player {
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+.player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem;
+  font-size: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+/* LOADER PAYING */
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #2790f4;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+.passive {
+  opacity: 0.3;
+}
+
+.passive .cell {
+  cursor: not-allowed;
+}
